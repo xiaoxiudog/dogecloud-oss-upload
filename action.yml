@@ -1,0 +1,26 @@
+# action.yml
+name: "dogecloud-oss-upload"
+description: "多吉云储存批量上传"
+branding:
+  icon: 'play'  
+  color: 'orange'
+inputs:
+  accessKey:
+    description: "AccessKey"
+    required: true
+  secretKey:
+    description: "SecretKey"
+    required: true
+  s3Bucket:
+    description: "存储空间的 s3Bucket 值"
+    required: true
+  s3Endpoint:
+    description: "存储空间的 s3Endpoint 值"
+    required: true
+  directoryPath:
+    description: "要上传的目录路径"
+    required: true
+    default: "public"
+runs:
+  using: "node16"
+  main: "index.js"

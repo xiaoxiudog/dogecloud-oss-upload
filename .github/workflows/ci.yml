@@ -1,0 +1,16 @@
+name: dogecloud-oss-upload
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: xdogrun/dogecloud-oss-upload@v1
+        with:
+          accessKey: ${{ secrets.ACCESS_KEY }}
+          secretKey: ${{ secrets.SECRET_KEY }}
+          s3Bucket: "s-sh-11111-xdog-1111111111"
+          s3Endpoint: "https://cos.ap-shanghai.myqcloud.com"
+          directoryPath: "public"
